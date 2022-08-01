@@ -1,0 +1,138 @@
+html *{
+    font-family: 'Montserrat', sans-serif;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin: 0px;
+}
+
+.body-container{
+    display: grid;
+    grid-template-columns: repeat(4, 18vw);
+    grid-auto-rows: 20vh;
+    grid-gap: 20px;
+    background-color: #fff3e1;
+    justify-content: center;
+    width: 100vw;
+    min-height: 100vh;
+    max-width:100%; 
+}
+
+.card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    background-color: #FBFAF5;
+    border-radius: 10px;
+    border: 2px solid #36454F;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.35);
+}
+
+.navbar{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-size: 50px;
+	color: #F9FAF8;
+	background-color: #36454F;
+	margin: 0px;
+	border: 0px;
+    width: 100%;
+}
+
+/* .navbar a{
+	text-decoration: none;
+	font-size: 18px;
+	color: #E5E7EB;
+	margin: 0px;
+	border: 0px;
+	padding: 15px;
+} */
+
+.left{
+	display: flex;
+	margin-left: 160px;
+	padding: 8px;
+	gap: 12px;
+}
+
+/* .right{
+	display: flex;
+	margin-right: 160px;
+	padding: 8px;
+	gap: 12px;
+} */
+
+.add-container{
+    width: 100%;
+    background-color: #fff3e1;
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+button {
+    background-color: #36454F; /* Green */
+    border: none;
+    color: #ffebcd;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition-duration: 0.3s;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+
+  .add {
+    height: 6vh;
+    width: 10vw;
+    background-color: #fff3e1;
+    color: black;
+    border: 2px solid #36454F;
+  }
+  
+ .add:hover {
+    background-color: #36454F;
+    color: #FBFAF5;
+  }
+
+.hidden{
+    display: none;
+}
+
+.popup{
+    position: fixed;
+    width: 30vw;
+    height: 50vh;
+    top: 25vh;
+    left: 35vw;
+    background-color: #FBFAF5;
+    border: 3px solid #36454F;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+  @media only screen and (max-width: 600px) {
+    .body-container {
+        grid-template-columns: repeat(2, 40vw);
+    }
+
+    .add{
+        width:30vw;
+        height:15vh;
+    }
+
+    .card{
+        grid-auto-rows: 40vh;
+    }
+  }
