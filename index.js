@@ -37,7 +37,7 @@ const popup = document.querySelector('.popup');
 
 addButton.addEventListener("click", () => {
   const popup = document.querySelector('.popup');
-  popup.classList.remove('hidden');
+  popup.classList.add('active');
 })
 
 addBookForm.addEventListener("submit", (e) => {
