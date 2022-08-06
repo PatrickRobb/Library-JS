@@ -1,8 +1,8 @@
-html *{
+html * {
     font-family: 'Montserrat', sans-serif;
 }
 
-body{
+body {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -10,7 +10,7 @@ body{
     margin: 0px;
 }
 
-.body-container{
+.body-container {
     display: grid;
     grid-template-columns: repeat(4, 18vw);
     grid-auto-rows: 20vh;
@@ -19,10 +19,10 @@ body{
     justify-content: center;
     width: 100vw;
     min-height: 100vh;
-    max-width:100%; 
+    max-width: 100%;
 }
 
-.card{
+.card {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -34,26 +34,26 @@ body{
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.35);
 }
 
-.navbar{
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-	font-size: 50px;
-	color: #F9FAF8;
-	background-color: #36454F;
-	margin: 0px;
-	border: 0px;
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 50px;
+    color: #F9FAF8;
+    background-color: #36454F;
+    margin: 0px;
+    border: 0px;
     width: 100%;
 }
 
-.left{
-	display: flex;
-	margin-left: 160px;
-	padding: 8px;
-	gap: 12px;
+.left {
+    display: flex;
+    margin-left: 160px;
+    padding: 8px;
+    gap: 12px;
 }
 
-.submit{
+.submit {
     color: #F9FAF8
 }
 
@@ -64,7 +64,7 @@ body{
 	gap: 12px;
 } */
 
-.add-container{
+.add-container {
     width: 100%;
     background-color: #fff3e1;
     display: flex;
@@ -74,7 +74,8 @@ body{
 }
 
 button {
-    background-color: #36454F; /* Green */
+    background-color: #36454F;
+    /* Green */
     border: none;
     color: #ffebcd;
     padding: 5px 10px;
@@ -86,29 +87,33 @@ button {
     transition-duration: 0.3s;
     cursor: pointer;
     border-radius: 5px;
-  }
+}
 
-  .add {
+.add {
     height: 6vh;
     width: 10vw;
     background-color: #fff3e1;
     color: black;
     border: 2px solid #36454F;
-  }
-  
- .add:hover {
+}
+
+.add:hover {
     background-color: #36454F;
     color: #FBFAF5;
-  }
+}
+
+.readButton {
+    background-color: green;
+}
 
 /* .hidden{
     display: none;
 } */
 
-.popup{
+.popup {
     position: fixed;
     width: 15vw;
-    height: 30vh;
+    height: 40vh;
     top: 50vh;
     left: 50vw;
     background-color: #FBFAF5;
@@ -120,7 +125,7 @@ button {
     box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.6);
 }
 
-.add-book{
+.add-book {
     display: flex;
     flex-direction: column;
     gap: 20px;
@@ -130,19 +135,19 @@ button {
 
 .popup.active {
     transform: translate(-50%, -50%) scale(1);
-  }
+}
 
-  @media only screen and (max-width: 600px) {
+@media only screen and (max-width: 600px) {
     .body-container {
         grid-template-columns: repeat(2, 40vw);
     }
 
-    .add{
-        width:30vw;
-        height:15vh;
+    .add {
+        width: 30vw;
+        height: 15vh;
     }
 
-    .card{
-        grid-auto-rows: 40vh;
+    .body-container {
+        grid-auto-rows: 35vh;
     }
-  }
+}

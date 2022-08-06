@@ -1,8 +1,20 @@
+class Book {
+  constructor(title, author, pages, read) {
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.read = read;
+  }
+  info() {
+    return (title + " by " + author + ", " + pages);
+  }
+}
+
 const content = document.querySelector('.body-container');
 
 let myLibrary = [];
 
-addBookToLibrary(new Book("Brave New World", "Aldous Huxley", 311));
+addBookToLibrary(new Book("Brave New World", "Aldous Huxley", 311, true));
 
 displayBooks();
 
@@ -13,19 +25,24 @@ function displayBooks() {
 
     const nextBookTitle = document.createElement('p');
     nextBookTitle.textContent = "Title: " + book.title;
-    nextBookTitle.classList.add('bookTitle');
 
     const nextBookAuthor = document.createElement('p');
     nextBookAuthor.textContent = "Author: " + book.author;
-    nextBookAuthor.classList.add('bookAuthor');
 
     const nextBookPages = document.createElement('p');
     nextBookPages.textContent = "Page Count: " + book.pages;
-    nextBookPages.classList.add('bookPages');
+
+    if(nextBook.read == true){
+      nextBook.style.backgroundColor = "green";
+    }
+
+    const readButton = document.createElement('button')
+    readButton.textContent = "Read?"
 
     nextBook.appendChild(nextBookTitle);
     nextBook.appendChild(nextBookAuthor);
     nextBook.appendChild(nextBookPages);
+    nextBook.appendChild(readButton);
 
     content.appendChild(nextBook);
   })
@@ -36,36 +53,34 @@ const addBookForm = document.querySelector('.add-book');
 const popup = document.querySelector('.popup');
 
 addButton.addEventListener("click", () => {
-  const popup = document.querySelector('.popup');
   popup.classList.add('active');
 })
 
 addBookForm.addEventListener("submit", (e) => {
   e.preventDefault();
-  addBookToLibrary(getFormBook());
+  addBookToLibrary(bookFormResult());
   displayBooks();
   console.log(myLibrary);
 })
 
-const getFormBook = () => {
+const bookFormResult = () => {
   const title = document.querySelector('.title-input').value;
   const author = document.querySelector('.author-input').value;
   const pages = document.querySelector('.pages-input').value;
+  const read = document.querySelector(".read-input").value;
   content.innerHTML = '';
-  popup.classList.add('hidden');
-  return (new Book(title, author, pages));
+  popup.classList.remove('active');
+  return (new Book(title, author, pages, read));
 }
 
-
-
-function Book(title, author, pages) {
-  this.title = title;
-  this.author = author;
-  this.pages = pages;
-  this.info = function () {
-    return (title + " by " + author + ", " + pages);
-  }
-}
+// function Book(title, author, pages) {
+//   this.title = title;
+//   this.author = author;
+//   this.pages = pages;
+//   this.info = function () {
+//     return (title + " by " + author + ", " + pages);
+//   }
+// }
 
 function addBookToLibrary(book) {
   myLibrary.push(book);
